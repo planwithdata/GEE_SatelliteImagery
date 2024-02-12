@@ -18,6 +18,12 @@ The MODIS fire detection techniques are automated, utilizing spectral criteria b
 ## Implementation
 The project is implemented using the Google Earth Engine platform and Python libraries such as Folium for visualization. The workflow involves loading satellite data, processing it to identify fire locations, and creating interactive maps for visualization and analysis.
 
+
+## Example Image
+![Avg_Fire_Intensity](https://ibb.co/J5pFZqK)
+
+![WF_Probability_Binary](https://ibb.co/YQckT6L)
+
 For more information about the methodology and implementation, please refer to the code and documentation provided in this repository.
 
 ---
