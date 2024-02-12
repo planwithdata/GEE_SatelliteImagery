@@ -20,9 +20,9 @@ The project is implemented using the Google Earth Engine platform and Python lib
 
 
 ## Example Image
-![Avg_Fire_Intensity](https://ibb.co/J5pFZqK)
+![Avg_Fire_Intensity](https://github.com/planwithdata/GEE_SatelliteImagery/blob/master/Plots_Screenshots/Acerage_Fire_Intensity.png)
 
-![WF_Probability_Binary](https://ibb.co/YQckT6L)
+![WF_Probability_Binary](https://github.com/planwithdata/GEE_SatelliteImagery/blob/master/Plots_Screenshots/WF_Prob_Binary.png)
 
 For more information about the methodology and implementation, please refer to the code and documentation provided in this repository.
 
