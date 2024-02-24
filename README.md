@@ -1,31 +1,39 @@
-# Wildfire Probability Mapping for Richmond, Virginia
+# Forecasting Wildfire Acreage in Traffic Analysis Zones (TAZ)
 
-## Overview
-This project aims to create wildfire probability maps for Richmond, Virginia, utilizing the MOD14A1.061 dataset from Terra Thermal Anomalies & Fire Daily Global 1km. The methodology involves analyzing satellite data to detect fire locations, visualize fire-prone areas, and provide insights into wildfire risk assessment for the region.
+## Project Overview
 
-## Dataset Reference
-The dataset used in this project is the MODIS fire detection and characterization dataset, specifically MOD14A1.061. It provides daily, global fire information derived from satellite observations. For detailed information about the dataset, refer to the [MOD14A1.061 dataset catalog](https://developers.google.com/earth-engine/datasets/catalog/MODIS_061_MOD14A1#description).
+In this project, I've built upon the work of our previous initiative that focused on creating wildfire probability maps for Richmond, Virginia. Using the MOD14A1.061 dataset from Terra Thermal Anomalies & Fire Daily Global 1km, I initially engaged in analyzing satellite data to detect fire locations, visualize fire-prone areas, and offer insights into wildfire risk assessment within the region. Moving forward from that foundation, this phase introduces the **"Forecasting Wildfire Acreage Model"**. This model is designed to predict wildfire-prone acreage within each Traffic Analysis Zone (TAZ) based on future scenarios of land use and population distribution.
 
-## Theoretical Description
-The MODIS fire detection techniques are automated, utilizing spectral criteria based on apparent temperature and temperature differences to detect fire pixels. The MOD14A1 and MYD14A1 products are tile-based, containing daily fire information spanning 1km grids. Each product file covers one of the 460 MODIS tiles, with eight days of data packaged into a single file. The fire mask provided in the dataset identifies fire pixels, and corresponding QA layers provide additional information about land/water state and day/night observation.
+### Background
 
-## Methodology
-1. **Dataset Loading and Filtering**: The MOD14A1 dataset is loaded and filtered based on the desired time period and geographic area (Richmond, Virginia).
-2. **Fire Detection**: Fire locations are identified using the FireMask band to create a composite of fire-prone areas.
-3. **Visualization**: The identified fire-prone areas are visualized on a map using the Folium library, along with the base locality boundary for Richmond.
-4. **Map Display**: The interactive map displaying fire-prone areas and locality boundary is generated and displayed.
+Previously, I calculated wildfire-prone acres in each TAZ by harnessing satellite imagery from the Google Earth Engine, identifying areas at risk of wildfires. Now, I aim to deepen this analysis by mapping the current wildfire-prone (WF_prone) acreage per TAZ to our land use allocation file, which details the acreage ratio of population distribution across different land use types.
 
-## Implementation
-The project is implemented using the Google Earth Engine platform and Python libraries such as Folium for visualization. The workflow involves loading satellite data, processing it to identify fire locations, and creating interactive maps for visualization and analysis.
+### Model Development
 
+I used WF_prone data, population density, and the number of households as input variables (X), and the summarized WF_prone acreage in each TAZ as the target variable (Y) to train a Random Forest Regressor. This model is adept at forecasting the WF_acreage by TAZ for any new scenario of land and population allocation, which is crucial for future planning. It enables us to forecast wildfire acreage not just until the year 2050 but also under various project scenario planning. These scenarios allow us to prepare for different potential situations by modifying land and population allocations accordingly.
 
-## Example Image
-![Avg_Fire_Intensity](https://github.com/planwithdata/GEE_SatelliteImagery/blob/master/Plots_Screenshots/Acerage_Fire_Intensity.png)
+#### How the Model Works
 
-![WF_Probability_Binary](https://github.com/planwithdata/GEE_SatelliteImagery/blob/master/Plots_Screenshots/WF_Prob_Binary.png)
+The Random Forest Regressor works by building multiple decision trees during the training phase and outputting the average prediction of the individual trees. This method enhances prediction accuracy and mitigates overfitting, commonly associated with decision trees. By leveraging multiple trees, it captures a comprehensive view of the data's nuances, making it exceptionally suitable for the complexity and variability of our project.
 
-For more information about the methodology and implementation, please refer to the code and documentation provided in this repository.
+#### Satellite Imagery and Accuracy
 
----
+Using Google Earth Engine's satellite imagery is pivotal for the accuracy and reliability of our calculations of wildfire-prone areas. This high-resolution imagery allows for the precise identification of thermal anomalies and fire incidents, serving as a solid foundation for our initial wildfire probability maps. The rich dataset ensures our model is trained on accurate and up-to-date information, enhancing its forecasting capabilities.
 
-**Note**: This README provides an overview of the project and its objectives. Detailed documentation, code, and results are available in the repository.
+## Getting Started
+
+### Usage
+
+Read the 'Readme - Copy' file under Forecasting_Future_WF
+
+### Contributing
+
+(I invite others to contribute to the project and outline guidelines for submitting pull requests or issues.)
+
+## License
+
+This project is licensed under the Apache License 2.0 - see the [LICENSE.md](LICENSE.md) file for details.
+
+## Acknowledgments
+
+(Here, I'd like to mention individuals, organizations, or datasets that played a significant role in my project.)
