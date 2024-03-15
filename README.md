@@ -1,4 +1,4 @@
-# Wildfire Probability Mapping for Richmond, Virginia
+# Wildfire Risk Assessment for Richmond, Virginia
 
 ## Overview
 This project aims to create wildfire probability maps for Richmond, Virginia, utilizing the MOD14A1.061 dataset from Terra Thermal Anomalies & Fire Daily Global 1km. The methodology involves analyzing satellite data to detect fire locations, visualize fire-prone areas, and provide insights into wildfire risk assessment for the region.
