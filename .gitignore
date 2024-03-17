@@ -1,2 +1,11 @@
 # Ignore all Jupyter notebooks
 *.ipynb
+Forecasting_Future_WF/Case_Study_1_2050RVA/RSLAMScenarios_RawData/SINKS/RSlam_output_revisedAr_altSinks_Tertiary.csv
+*.dbf
+*.prj
+*.xlsx
+*.shp
+*.cpg
+*.mxd
+*.shx
+*.csv
