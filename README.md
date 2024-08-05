@@ -1,4 +1,4 @@
-# Forecasting Wildfire Acreage in Traffic Analysis Zones (TAZ)
+
 
 ## Project Overview
 
